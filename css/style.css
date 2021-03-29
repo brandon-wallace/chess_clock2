@@ -22,6 +22,19 @@ main {
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
 .player {
     margin: 5px 0;
     display: flex;
@@ -81,6 +94,9 @@ main {
         max-width: 800px;
         flex-direction: row;
     }
+    .player__tile {
+        max-height: 300px;
+    }
     .p1-minutes,
     .p2-minutes {
         font-size: 5rem;
@@ -98,6 +114,10 @@ main {
 @media only screen and (min-width: 400px) {
     .player__tile {
         height: 400px;
+    }
+    .p1-minutes,
+    .p2-minutes {
+        font-size: 6rem;
     }
 }
 
