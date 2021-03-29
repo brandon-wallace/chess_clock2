@@ -1,29 +1,28 @@
-h1,h2,p,ul {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
     width: 100%;
     height: 100%;
-    background-color: #CCCCCC;
+    background-color: #14A7FF;
 }
 
 body {
-    margin: 0;
+    font-size: 100%;
     font-family: monospace, monospace;
 }
 
 main {
-    margin: 0;
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
 }
 
 .player {
-    font-size: 0;
     margin: 5px 0;
     display: flex;
     flex-direction: column;
@@ -31,7 +30,7 @@ main {
 
 .player__tile {
     width: 100%;
-    height: 400px;
+    height: 300px;
     display: flex;
     margin: 0 auto;
     color: #000000;
@@ -47,7 +46,7 @@ main {
 
 .player-2 {
     color: #FFFFFF;
-    background-color: #000000;
+    background-color: #2D2C2C;
 }
 
 .p1-minutes,
@@ -77,9 +76,29 @@ main {
 }
 
 @media only screen and (orientation: landscape) {
-  .players {
-    flex-direction: row;
-  }
+    .player {
+        margin: 5px auto;
+        max-width: 800px;
+        flex-direction: row;
+    }
+    .p1-minutes,
+    .p2-minutes {
+        font-size: 5rem;
+    }
+    .timer__buttons {
+        display: flex;
+    }
+    .timer__start-bttn, 
+    .timer__reset-bttn {
+        display: block;
+        margin: 0 auto 5px auto;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    .player__tile {
+        height: 400px;
+    }
 }
 
 @media only screen and (min-width: 850px) {
