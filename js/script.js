@@ -14,7 +14,7 @@ const padZero = (number) => {
 }
 
 
-// Create a class for each timer.
+// Create a class for the timer.
 class Timer {
     constructor(player, minutes) {
         this.player = player;
