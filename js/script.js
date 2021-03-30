@@ -34,7 +34,6 @@ let p2time = new Timer('min2', document.getElementById('min2').textContent);
 // Swap player's timer after a move (player1 = 0, player2 = 1).
 const swapPlayer = () => {
     if (!playing) return;
-    console.log('SWAPPING!');
     currentPlayer = currentPlayer === 0 ? 1 : 0;
 }
 
@@ -93,6 +92,7 @@ panel.addEventListener('click', swapPlayer);
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
         if (buttons[i].textContent === 'START') {
+            buttons[i].style.color = '#AAAAAA';
             startTimer();
         } else {
             // Reset clocks by reloading the page.
