@@ -36,7 +36,7 @@ img {
 }
 
 .player {
-    margin: 5px 0;
+    margin: 1em 0 5px 0;
     display: flex;
     flex-direction: column;
 }
@@ -48,6 +48,7 @@ img {
     margin: 0 auto;
     color: #000000;
     max-width: 400px;
+    border-radius: 8px;
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
@@ -60,6 +61,7 @@ img {
 .player-2 {
     color: #FFFFFF;
     background-color: #2D2C2C;
+    margin-top: 5px;
 }
 
 .p1-minutes,
@@ -68,16 +70,21 @@ img {
     font-weight: bold;
 }
 
+.timer__buttons {
+    margin-bottom: 1em;
+}
+
 .timer__start-bttn, 
 .timer__reset-bttn {
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     margin: 0 auto 5px auto;
     display: block;
     color: #020202;
     max-width: 400px;
     font-size: 1.2rem;
     font-weight: bold;
+    border-radius: 8px;
     letter-spacing: 2px;
     border: 3px solid #000000;
 }
@@ -85,17 +92,19 @@ img {
 .timer__start-bttn:hover, 
 .timer__reset-bttn:hover {
     color: #FFFFFF;
-    background-color: #02219B;
+    background-color: #0071D5;
 }
 
-@media only screen and (orientation: landscape) {
+@media only screen and (orientation: landscape) and (max-width: 850px) {
     .player {
         margin: 5px auto;
-        max-width: 800px;
+        max-width: 610px;
         flex-direction: row;
     }
     .player__tile {
-        max-height: 300px;
+        margin-top: 0;
+        max-width: 300px;
+        max-height: 250px;
     }
     .p1-minutes,
     .p2-minutes {
@@ -103,15 +112,18 @@ img {
     }
     .timer__buttons {
         display: flex;
+        margin: 0 auto;
+        max-width: 610px;
     }
     .timer__start-bttn, 
     .timer__reset-bttn {
         display: block;
+        max-width: 300px;
         margin: 0 auto 5px auto;
     }
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (orientation: portrait) and (min-width: 400px) {
     .player__tile {
         height: 400px;
     }
@@ -123,13 +135,28 @@ img {
 
 @media only screen and (min-width: 850px) {
     .player {
-        margin: 5px auto;
-        max-width: 800px;
+        margin: 1em auto 10px auto;
+        max-width: 810px;
         flex-direction: row;
+    }
+    .player__tile {
+        height: 400px;
+    }
+    .player-2 {
+        margin-top: 0;
+    }
+    .p1-minutes,
+    .p2-minutes {
+        font-size: 7rem;
     }
     .timer__buttons {
         display: flex;
         margin: 0 auto;
-        max-width: 800px;
+        max-width: 810px;
+    }
+    .timer__start-bttn, 
+    .timer__reset-bttn {
+        padding: 1em;
+        font-size: 1.6rem;
     }
 }
