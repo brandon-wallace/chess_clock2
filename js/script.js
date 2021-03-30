@@ -93,6 +93,7 @@ panel.addEventListener('click', swapPlayer);
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
         if (buttons[i].textContent === 'START') {
+            buttons[i].style.color = '#AAAAAA';
             startTimer();
         } else {
             // Reset clocks by reloading the page.
