@@ -95,6 +95,10 @@ img {
     background-color: #0071D5;
 }
 
+footer p {
+    text-align: center;
+}
+
 @media only screen and (orientation: landscape) and (max-width: 850px) {
     .player {
         margin: 5px auto;
