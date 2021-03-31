@@ -64,8 +64,7 @@ img {
     margin-top: 5px;
 }
 
-.p1-minutes,
-.p2-minutes {
+.player__digits {
     font-size: 6rem;
     font-weight: bold;
 }
@@ -110,8 +109,7 @@ footer p {
         max-width: 300px;
         max-height: 250px;
     }
-    .p1-minutes,
-    .p2-minutes {
+    .player__digits {
         font-size: 5rem;
     }
     .timer__buttons {
@@ -131,8 +129,7 @@ footer p {
     .player__tile {
         height: 400px;
     }
-    .p1-minutes,
-    .p2-minutes {
+    .player__digits {
         font-size: 6rem;
     }
 }
@@ -149,8 +146,7 @@ footer p {
     .player-2 {
         margin-top: 0;
     }
-    .p1-minutes,
-    .p2-minutes {
+    .player__digits {
         font-size: 7rem;
     }
     .timer__buttons {
