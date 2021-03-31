@@ -1,6 +1,5 @@
-let seconds = 60;
 let playing = false;
-let currentPlayer = 0;
+let currentPlayer = 1;
 const panel = document.querySelector('.player');
 const buttons = document.querySelectorAll('.bttn');
 
@@ -19,33 +18,32 @@ class Timer {
     constructor(player, minutes) {
         this.player = player;
         this.minutes = minutes;
-        this.seconds = 60;
+        //this.seconds = 60;
     }
     getMinutes(timeId) {
         return document.getElementById(timeId).textContent;
     }
 }
 
-
 let p1time = new Timer('min1', document.getElementById('min1').textContent);
 let p2time = new Timer('min2', document.getElementById('min2').textContent);
 
 
-// Swap player's timer after a move (player1 = 0, player2 = 1).
+// Swap player's timer after a move (player1 = 1, player2 = 2).
 const swapPlayer = () => {
     if (!playing) return;
-    currentPlayer = currentPlayer === 0 ? 1 : 0;
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
 }
 
 
 // Start timer countdown to zero.
 const startTimer = () => {
     playing = true;
-    let p1sec = seconds;
-    let p2sec = seconds;
+    let p1sec = 60;
+    let p2sec = 60;
 
     let timer = setInterval(function() {
-        if (currentPlayer === 0) {
+        if (currentPlayer === 1) {
             if (playing) {
                 buttons[0].disabled = true;
                 p1time.minutes = parseInt(p1time.getMinutes('min1'), 10);
@@ -85,17 +83,19 @@ const startTimer = () => {
 }
 
 
-// Listen for a mouse click after player moves to switch player's timer.
+// Listen for a mouse click or tap on the screen to switch player's timer.
 panel.addEventListener('click', swapPlayer);
 
 // Loop through the start and reset buttons.
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
+        console.log(buttons[i]);
         if (buttons[i].textContent === 'START') {
+            // Turn the button a gray color to signify a disabled button.
             buttons[i].style.color = '#AAAAAA';
             startTimer();
         } else {
-            // Reset clocks by reloading the page.
+            // Reset everything by reloading the page.
             location.reload(true);
         }
     });
