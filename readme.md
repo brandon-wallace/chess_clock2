@@ -1,4 +1,4 @@
-# Chess Timer
+# Chess Clock 2
 
 ![screenshot1](images/screenshot1.png)
 
