@@ -88,7 +88,16 @@ img {
     border: 3px solid #000000;
 }
 
-.timer__start-bttn:hover, 
+.timer__start-bttn {
+    color: #FFFFFF;
+    background-color: #0071D5;
+}
+
+.timer__start-bttn:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
 .timer__reset-bttn:hover {
     color: #FFFFFF;
     background-color: #0071D5;
