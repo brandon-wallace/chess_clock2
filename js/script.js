@@ -1,6 +1,6 @@
 let playing = false;
 let currentPlayer = 1;
-const panel = document.querySelector('.player');
+const timerPanel = document.querySelector('.player');
 const buttons = document.querySelectorAll('.bttn');
 
 
@@ -83,8 +83,8 @@ const startTimer = () => {
 }
 
 
-// Listen for a mouse click or tap on the screen to switch player's timer.
-panel.addEventListener('click', swapPlayer);
+// Listen for a mouse click or tap on the screen to toggle between timers.
+timerPanel.addEventListener('click', swapPlayer);
 
 // Loop through the start and reset buttons.
 for (let i = 0; i < buttons.length; i++) {
