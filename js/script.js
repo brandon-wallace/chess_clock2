@@ -97,7 +97,8 @@ for (let i = 0; i < buttons.length; i++) {
         console.log(buttons[i]);
         if (buttons[i].textContent === 'START') {
             // Turn the button a gray color to signify a disabled button.
-            buttons[i].style.color = '#AAAAAA';
+            buttons[i].style.color = '#EEEEEE';
+            buttons[i].style.backgroundColor = '#606060';
             startTimer();
         } else {
             // Reset everything by reloading the page.
