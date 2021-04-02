@@ -2,6 +2,8 @@ let playing = false;
 let currentPlayer = 1;
 const timerPanel = document.querySelector('.player');
 const buttons = document.querySelectorAll('.bttn');
+const timesUp = new Audio('audio/460133__eschwabe3__robot-affirmative.wav');
+const click = new Audio('audio/561660__mattruthsound.wav');
 
 
 // Add a leading zero to numbers less than 10.
@@ -33,6 +35,7 @@ let p2time = new Timer('min2', document.getElementById('min2').textContent);
 const swapPlayer = () => {
     if (!playing) return;
     currentPlayer = currentPlayer === 1 ? 2 : 1;
+    click.play();
 }
 
 
@@ -55,6 +58,7 @@ const startTimer = () => {
                 document.getElementById('min1').textContent = padZero(p1time.minutes);
                 if (p1sec === 0) {
                     if (p1sec === 0 && p1time.minutes === 0) {
+                        timesUp.play();
                         clearInterval(timer);
                         playing = false;
                     }
@@ -72,6 +76,7 @@ const startTimer = () => {
                 document.getElementById('min2').textContent = padZero(p2time.minutes);
                 if (p2sec === 0) {
                     if (p2sec === 0 && p2time.minutes === 0) {
+                        timesUp.play();
                         clearInterval(timer);
                         playing = false;
                     }
