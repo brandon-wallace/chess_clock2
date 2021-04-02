@@ -53,9 +53,9 @@ img {
     justify-content: center;
     background-color: #FFFFFF;
     box-shadow: inset 3px 3px 0 #000, 
-                inset -3px 3px 0 black, 
-                inset -3px -3px 0 black, 
-                inset 3px -3px 0 black;
+                inset -3px 3px 0 #000, 
+                inset -3px -3px 0 #000, 
+                inset 3px -3px 0 #000;
 }
 
 .player-2 {
@@ -65,7 +65,7 @@ img {
 }
 
 .player__digits {
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: bold;
 }
 
