@@ -39,6 +39,18 @@ const swapPlayer = () => {
 }
 
 
+// Warn player if time drops below one minute and thirty seconds.
+const timeWarning = (player, min, sec) => {
+    if (min < 1 && sec <= 30) {
+        if (player === 1) {
+            document.querySelector('.player-1 .player__digits').style.color = '#CC0000';
+        } else {
+            document.querySelector('.player-2 .player__digits').style.color = '#CC0000';
+        }
+    }
+}
+
+
 // Start timer countdown to zero.
 const startTimer = () => {
     playing = true;
@@ -46,6 +58,7 @@ const startTimer = () => {
     let p2sec = 60;
 
     let timer = setInterval(function() {
+        // Player 1.
         if (currentPlayer === 1) {
             if (playing) {
                 buttons[0].disabled = true;
@@ -54,6 +67,7 @@ const startTimer = () => {
                     p1time.minutes = p1time.minutes - 1;
                 }
                 p1sec = p1sec - 1;
+                timeWarning(currentPlayer, p1time.minutes, p1sec);
                 document.getElementById('sec1').textContent = padZero(p1sec);
                 document.getElementById('min1').textContent = padZero(p1time.minutes);
                 if (p1sec === 0) {
@@ -66,12 +80,14 @@ const startTimer = () => {
                 }
             }
         } else {
+        // Player 2.
             if (playing) {
                 p2time.minutes = parseInt(p2time.getMinutes('min2'), 10);
                 if (p2sec === 60) {
                     p2time.minutes = p2time.minutes - 1;
                 }
                 p2sec = p2sec - 1;
+                timeWarning(currentPlayer, p2time.minutes, p2sec);
                 document.getElementById('sec2').textContent = padZero(p2sec);
                 document.getElementById('min2').textContent = padZero(p2time.minutes);
                 if (p2sec === 0) {
@@ -94,7 +110,6 @@ timerPanel.addEventListener('click', swapPlayer);
 // Loop through the start and reset buttons.
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
-        console.log(buttons[i]);
         if (buttons[i].textContent === 'START') {
             // Turn the button a gray color to signify a disabled button.
             buttons[i].style.color = '#EEEEEE';
