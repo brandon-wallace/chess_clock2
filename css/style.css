@@ -119,14 +119,14 @@ footer p {
 
 @media only screen and (orientation: landscape) and (max-width: 850px) {
     .player {
-        margin: 5px auto;
         max-width: 610px;
         flex-direction: row;
+        margin: 5px auto 0 auto;
     }
     .player__tile {
-        margin-top: 0;
         max-width: 300px;
         max-height: 250px;
+        margin: 0 3px 5px 3px;
     }
     .player__digits {
         font-size: 5rem;
@@ -140,7 +140,7 @@ footer p {
     .timer__reset-bttn {
         display: block;
         max-width: 300px;
-        margin: 0 auto 5px auto;
+        margin: 0 3px 5px 3px;
     }
 }
 
