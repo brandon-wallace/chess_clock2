@@ -10,7 +10,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html,
@@ -28,7 +29,8 @@ body {
 main {
     width: 100%;
     padding: 0 10px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 h1 {
@@ -45,23 +47,38 @@ img {
 }
 
 .player {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 1em 0 5px 0;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .player__tile {
     width: 100%;
     height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 auto;
     color: #000000;
     max-width: 400px;
     border-radius: 8px;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: #FFFFFF;
-    box-shadow: inset 4px 4px 0 #000, 
+    -webkit-box-shadow: inset 4px 4px 0 #000, 
+                inset -4px 4px 0 #000, 
+                inset -4px -4px 0 #000, 
+                inset 4px -4px 0 #000;
+            box-shadow: inset 4px 4px 0 #000, 
                 inset -4px 4px 0 #000, 
                 inset -4px -4px 0 #000, 
                 inset 4px -4px 0 #000;
@@ -120,7 +137,10 @@ footer p {
 @media only screen and (orientation: landscape) and (max-width: 850px) {
     .player {
         max-width: 610px;
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         margin: 5px auto 0 auto;
     }
     .player__tile {
@@ -132,6 +152,8 @@ footer p {
         font-size: 5rem;
     }
     .timer__buttons {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin: 0 auto;
         max-width: 610px;
@@ -157,7 +179,10 @@ footer p {
     .player {
         margin: 1em auto 10px auto;
         max-width: 810px;
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
     .player__tile {
         height: 400px;
@@ -169,6 +194,8 @@ footer p {
         font-size: 7rem;
     }
     .timer__buttons {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin: 0 auto;
         max-width: 810px;
